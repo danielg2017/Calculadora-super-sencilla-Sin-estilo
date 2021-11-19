@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>calculadora</title>
+</head>
+<body>
+
+<script>
+	
+
+	var val1=""
+		calcul=""
+		val2=""
+
+
+	function marcar(num){
+		console.log("marcar num :" + num )
+		document.getElementById('visor').value = document.getElementById('visor').value + num 
+
+
+	}
+	
+
+	function signo(sig){
+		console.log("marcar signo es :" + sig )
+		val1 = document.getElementById('visor').value
+		val1 = parseInt(val1);
+		calcul = sig
+		document.getElementById('visor').value =""
+	}
+
+
+	function igual(res){
+		console.log("mostrar el resultado")
+		val2 = document.getElementById('visor').value 
+		val2 =parseInt(val2);
+		switch(calcul){
+			case "+":
+				 document.getElementById('visor').value = val1 + val2 
+				 break
+			case "-":
+				 document.getElementById('visor').value = val1 - val2 
+				 break
+			case "/":
+				 document.getElementById('visor').value = val1 / val2 
+				 break
+			case "*":
+				 document.getElementById('visor').value = val1 * val2 
+				 break
+
+		}
+	}
+
+	function borrar(){
+		val1=""
+		val2=""
+		calcul=""
+		document.getElementById('visor').value =""
+
+	}
+
+
+
+</script>
+
+	<input type="text" id="visor" value="" />
+	<br/>
+	<input type="button" value="1" onclick="marcar(1)" >
+	<input type="button" value="2" onclick="marcar(2)" >
+	<input type="button" value="3" onclick="marcar(3)" >
+	<input type="button" value="/" onclick="signo('/')" >	
+	<br/>
+	<input type="button" value="4" onclick="marcar(4)" >
+	<input type="button" value="5" onclick="marcar(5)" >
+	<input type="button" value="6" onclick="marcar(6)" >
+	<input type="button" value="x" onclick="signo('*')" >
+	<br/>
+	<input type="button" value="7" onclick="marcar(7)" >
+	<input type="button" value="8" onclick="marcar(8)" >
+	<input type="button" value="9" onclick="marcar(9)" >
+	<input type="button" value="-" onclick="signo('-')" >
+	<br/>
+	<input type="button" value="0" onclick="marcar(0)" >
+	<input type="button" value="Borrar" onclick="borrar()" >
+	<input type="button" value="+" onclick="signo('+')" >
+	<input type="button" value="=" onclick="igual()" >
+
+</body>
+</html>

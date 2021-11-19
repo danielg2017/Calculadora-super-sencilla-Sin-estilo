@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<input type="text" id="pantalla" value="" />
+	
+	<br/>
+	<input type="button" value="1" onclick="marcar(1)" >
+	<input type="button" value="2" onclick="marcar(2)" >
+	<input type="button" value="3" onclick="marcar(3)" >
+	<br/>
+	<input type="button" value="4" onclick="marcar(4)" >
+	<input type="button" value="5" onclick="marcar(5)" >
+	<input type="button" value="6" onclick="marcar(6)" >
+	<br/>
+	<input type="button" value="7" onclick="marcar(7)" >
+	<input type="button" value="8" onclick="marcar(8)" >
+	<input type="button" value="9" onclick="marcar(9)" >
+	<br/>
+	<input type="button" value="0" onclick="marcar(0)" >
+    <br/>
+	<input type="button" value="+" onclick="operacion(1)" >
+    <input type="button" value="-" onclick="operacion(2)" >
+    <input type="button" value="*" onclick="operacion(3)" >
+    <input type="button" value="/" onclick="operacion(4)" >
+    <br/>
+    <input type="button" value="resultado" onclick="operacion(5)" >
+	<input type="button" value="Borrar" onclick="operacion(6)" >
+	<br/>
+	
+
+	<script>
+        
+		function marcar(nro) {
+			console.log("Marcar el " + nro);
+			document.getElementById('pantalla').value+=nro;
+			
+
+        }
+		
+		function operacion(sig) {
+			switch (sig){
+                case 1:
+                    console.log(sig);
+                    num1 = document.getElementById('pantalla').value;
+                    num1 = parseInt (num1)
+                    signo = "+"
+                    document.getElementById('pantalla').value = "";
+
+
+                break
+                case 2:
+                    console.log(sig);
+                    console.log(sig);
+                    num1 = document.getElementById('pantalla').value;
+                    num1 = parseInt (num1)
+                    signo = "-"
+                    document.getElementById('pantalla').value = "";
+
+                break
+                case 3:
+                    console.log(sig);
+                    console.log(sig);
+                    num1 = document.getElementById('pantalla').value;
+                    num1 = parseInt (num1)
+                    signo = "*"
+                    document.getElementById('pantalla').value = "";
+
+                break
+                case 4:
+                    console.log(sig);
+                    console.log(sig);
+                    num1 = document.getElementById('pantalla').value;
+                    num1 = parseInt (num1)
+                    signo = "/"
+                    document.getElementById('pantalla').value = "";
+
+                break
+                case 5:
+                    console.log(sig);
+                    num2 = document.getElementById('pantalla').value;
+                    num2 = parseInt (num2)
+                    if(signo=="+"){
+                        result = num1+num2;
+                    }
+                    if(signo=="-"){
+                        result = num1-num2;
+                    }
+                    if(signo=="*"){
+                        result = num1*num2;
+                    }
+                    if(signo=="/"){
+                        result = num1/num2;
+                    }
+                    
+                    document.getElementById('pantalla').value = result;   
+                break
+                case 6:
+                document.getElementById('pantalla').value = "";
+                num1=0;
+                num2=0;
+			
+                break
+            }
+		}
+
+	</script>
+</body>
+</html>
